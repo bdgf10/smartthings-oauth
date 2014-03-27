@@ -60,7 +60,7 @@ else if(isset($_REQUEST['access_token']))
 	{
 
 //GET SWITCHES
-		$switchUrl = "http://graph.api.smartthings.com".$v['url']."/switches";
+		$switchUrl = "https://graph.api.smartthings.com".$v['url']."/switches";
 		$access_key = $_REQUEST['access_token'];
 
 		$ch = curl_init($switchUrl);
@@ -84,18 +84,18 @@ else if(isset($_REQUEST['access_token']))
 
 			print " <h3>$label</h3>";
 
-			$onUrl = "http://graph.api.smartthings.com".$v['url']."/switches/".$switch['id']."/on?access_token=".$_REQUEST['access_token'];
+			$onUrl = "https://graph.api.smartthings.com".$v['url']."/switches/".$switch['id']."/on?access_token=".$_REQUEST['access_token'];
 			print "<a target='cmd' href='$onUrl'>On</a>";
 
-			$offUrl = "http://graph.api.smartthings.com".$v['url']."/switches/".$switch['id']."/off?access_token=".$_REQUEST['access_token'];
+			$offUrl = "https://graph.api.smartthings.com".$v['url']."/switches/".$switch['id']."/off?access_token=".$_REQUEST['access_token'];
 			print "<a  target='cmd' href='$offUrl' value='Off'>Off</a>";
 
-			$toggleUrl = "http://graph.api.smartthings.com".$v['url']."/switches/".$switch['id']."/toggle?access_token=".$_REQUEST['access_token'];
+			$toggleUrl = "https://graph.api.smartthings.com".$v['url']."/switches/".$switch['id']."/toggle?access_token=".$_REQUEST['access_token'];
 			print "<a target='cmd' href='$toggleUrl'>Toggle</a><BR>";
 		}
 		
 //GET LOCKS
-		$lockUrl = "http://graph.api.smartthings.com".$v['url']."/locks";
+		$lockUrl = "https://graph.api.smartthings.com".$v['url']."/locks";
 		$access_key = $_REQUEST['access_token'];
 
 		$ch = curl_init($lockUrl);
@@ -117,10 +117,10 @@ else if(isset($_REQUEST['access_token']))
 
 			print "<h3>$label</h3>";
 
-			$lockUrl = "http://graph.api.smartthings.com".$v['url']."/locks/".$lock['id']."/lock?access_token=".$_REQUEST['access_token'];
+			$lockUrl = "https://graph.api.smartthings.com".$v['url']."/locks/".$lock['id']."/lock?access_token=".$_REQUEST['access_token'];
 			print "<a target='cmd' href='$lockUrl'>Lock</a>";
 
-			$unlockUrl = "http://graph.api.smartthings.com".$v['url']."/locks/".$lock['id']."/unlock?access_token=".$_REQUEST['access_token'];
+			$unlockUrl = "https://graph.api.smartthings.com".$v['url']."/locks/".$lock['id']."/unlock?access_token=".$_REQUEST['access_token'];
 			print "<a  target='cmd' href='$unlockUrl' value='Off'>Unlock</a><BR>";
 		}
 
